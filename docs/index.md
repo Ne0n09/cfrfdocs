@@ -1,19 +1,7 @@
-# Welcome to MkDocs
+# cloudflared-remotefalcon
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Self hosted Remote Falcon with easy setup and configuration using Cloudflare Tunnels and your own server capable of running Docker.
 
-## Commands
+[Remote Falcon](https://remotefalcon.com/) is an awesome project and I thought I would help give back by creating a simplified way to run Remote Falcon for those who would like to self host it beyond just these [ways](https://docs.remotefalcon.com/docs/developer-docs/running-it/methods)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-:christmas_tree:
+Are you ready to get [started](main/index.md)?

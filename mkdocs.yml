@@ -1,14 +1,23 @@
 site_name: cloudflared-remotefalcon docs
-#site_url: https://example.com
+site_url: https://ne0n09.github.io/cloudflared-remotefalcon/docs/
+repo_url: https://github.com/Ne0n09/cloudflared-remotefalcon
 theme:
   name: material
   font:
-    text: Merriweather Sans
+#    text: Source Serif 4
     code: Red Hat Mono
   icon:
     logo: material/github
   features:
-    - navigation.footer
+    - navigation.top
+    - navigation.instant
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - search.share
+#    - content.action.edit
+    - content.code.copy
+#    - navigation.footer
   palette: 
   # Dark Mode
     - scheme: slate
@@ -24,6 +33,30 @@ theme:
         name: Light Mode
       primary: blue
       accent: deep orange  
+
+nav:
+  - 'About':
+    - 'About': index.md
+    - 'Release Notes': release-notes.md
+    - 'Architecture': 
+      - 'Architecture': architecture/index.md
+      - 'Files': architecture/files.md
+      - 'Containers': architecture/containers.md
+  - 'Getting Started': 
+    - 'Getting Started': main/index.md
+    - 'Prerequisites': main/prerequisites.md
+    - 'Installation': 
+      - 'Installation': main/install/index.md
+      - 'Cloudflare': main/install/cloudflare.md
+      - 'Remote Falcon': main/install/remotefalcon.md
+    - 'Post-Install': main/post-install.md
+    - 'Updating': main/updating.md
+  - 'Scripts':
+    - 'Scripts': scripts/index.md
+  - 'Extra':
+    - 'Extra': extra/index.md
+  - 'Troubleshooting': troubleshooting/index.md
+
 
 markdown_extensions:
   - attr_list
@@ -45,13 +78,13 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+  - tables
+
+plugins:
+  - glightbox
 
 extra:
   social:
-    - icon: simple/youtube
-      link: https://www.youtube.com
-    - icon: simple/facebook
-      link: https://www.facebook.com
     - icon: simple/github
       link: https://github.com/Ne0n09/cloudflared-remotefalcon
 

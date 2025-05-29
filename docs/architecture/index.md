@@ -1,6 +1,12 @@
-# Diagram Examples
+# Architecture
 
-## Flowcharts
+Work in progress.
+
+For the meantime, here's some examples:
+
+## Diagram Examples
+
+### Flowcharts
 
 ```mermaid
 graph LR
@@ -8,9 +14,9 @@ graph LR
   B -->|Yes| C[Investigate...];
   C --> D[Debug];
   D --> B;
-  B ---->|No| E[Succes];
+  B ---->|No| E[Success];
 ```
-## Sequence Diagrams
+### Sequence Diagrams
 
 ```mermaid
 sequenceDiagram
