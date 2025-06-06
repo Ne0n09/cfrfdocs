@@ -6,6 +6,8 @@
 
 - Updated configure-rf list_file_versions placement in script.
 
+- Updated update_containers formatting.
+
 - Updated make_admin to allow selecting by number and updated formatting and coloring.
 
 - Updated generate_jwt to allow selecting by number and updated formatting and coloring.
