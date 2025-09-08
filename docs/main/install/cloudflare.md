@@ -63,6 +63,8 @@ Cloudflare will send you an email when your domain is available. You can continu
 
         !!! example "*.yourdomain.com, yourdomain.com"
 
+        Select Key Format: PEM
+
     !!! warning
         The free Cloudflare plan does not let you create wildcard certificates for sub-sub-domains 
         (ex: *.sub.yourdomain.com) unless you purchase Advanced Certificate Manager.

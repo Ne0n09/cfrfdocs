@@ -1,10 +1,32 @@
 # Release Notes
 
+## 2025.09.8.1
+
+- **GitHub Actions integration!** This will allow you to easily configure a GitHub repo to build images via GitHub Actions workflows. 
+
+- The configure-rf and update_containers scripts have been completely overhauled to add this along with other improvements.
+
+- Removed the update_rf_containers script as it is all integrated into the update_containers script.
+
+- Added sync_repo_secrets and run_workflow scripts to facilitate building images on GitHub.
+
+- Created a [template repository](https://github.com/Ne0n09/remote-falcon-image-builder) with the workflows that the configure-rf script will use to create a new private repo to run the GitHub Actions workflows.
+
+- If a REPO is configured in the .env the configure-rf, update_containers, or run_workflow scripts will automatically add ```ghcr.io/${REPO}``` to the image path in compose.yaml.
+
+- If a REPO is not configured it will also automatically remove it from the image path.
+
+- Updated FPP 9 plugin configuration [steps](main/post-install.md#fpp-9-and-above-update-the-fpp-plugin-settings).
+
+- Additional health checks in the health_check script.
+
+- Various other changes
+
 ## 2025.06.16.1
 
 - Updated configure-rf .env file version would not display if .env didn't already exist.
 
-- Added FPP 9 configuration steps [here](main/post-install.md#fpp-9).
+- Added FPP 9 configuration steps [here](main/post-install.md#fpp-9-and-above-update-the-fpp-plugin-settings).
 
 - Updated update_rf_containers again to fix the current_ctx not being found properly.
 
