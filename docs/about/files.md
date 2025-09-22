@@ -174,7 +174,7 @@ The .env file can be edited manually with `nano remotefalcon/.env`.
 
     `S3_SECRET_KEY`
 
-    :   Specifies the S3 seceret key for MinIO 'remote-falcon-images' bucket. The [minio_-_init](scripts.md#minio_initsh) script will automatically update the default value to a random value.
+    :   Specifies the S3 seceret key for MinIO 'remote-falcon-images' bucket. The [minio_init](scripts.md#minio_initsh) script will automatically update the default value to a random value.
 
     `OTEL_URI`
 
