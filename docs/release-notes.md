@@ -1,6 +1,72 @@
 # Release Notes
 
-## 2025.22.1
+## 2025.11.8.2
+
+- Updated configure-rf.sh to ask for Cloudflare API token for automatic Cloudflare installation
+
+- Removed CLARITY_PROJECT_ID arg from compose.yaml and configure-rf.sh.
+
+- Updated setup_cloudflare.sh to support passing the Cloudflare API token via arg either interactively or non-interactively.
+
+- This allows for even simpler automatic installation: 
+  
+    ```sh
+    ./configure-rf.sh -y --no-updates \
+    --set DOMAIN=<yourdomain.com> \
+    --set CF_API_TOKEN=<your_Cloudflare_API_token> \
+    --set GITHUB_PAT=<GitHub_PAT_for_image_builder>
+    ```
+
+- Updated setup_cloudflare.sh to fix a typo in the cloudflared container check.
+
+- Updated shared_function.sh to properly tag coollabs/minio images when replace_compose_tag is called. 
+
+- Other misc configure-rf.sh fixes.
+
+## 2025.11.8.1
+
+- Many updates to configure-rf.sh to support running it non-interactively to automate deployment: 
+
+    ```sh
+    ./configure-rf.sh [-y|--non-interactive] [--update-all|--update-scripts|--update-files|--update-workflows|--no-updates] [--set KEY=VALUE ...]
+    ```
+
+- Updated setup_cloudflare.sh to add flags to run the script automatically: 
+
+    ```sh
+    ./setup_cloudflare.sh [-y|--non-interactive] [--domain <domain.com>] [--api-token <api-token>]
+    ```
+
+- Example of combining both to spin up a basic installation automatically that uses GitHub for image building: 
+
+    ```sh
+    ./setup_cloudflare.sh -y --domain <yourdomain.com> --api-token <your_Cloudflare_API_token> && ./configure-rf.sh -y --no-updates --set GITHUB_PAT=<GitHub_PAT_for_image_builder>
+    ```
+
+- Updated compose.yaml to use coollabsio/minio image since MinIO is no longer providing builds and added health check.
+
+- Updated compose.yaml to change the environmental variables for control-panel and external-api.
+
+- Updated update_containers.sh to use coollabsio/minio for MinIO updates.
+
+- Updated share_functions.sh to remove yellow coloring from the existing .env variable display.
+
+- Udpated minio_init.sh to check if the container is ready via host curl instead of docker exec curl.
+
+- Other misc changes.
+
+## 2025.10.24.1
+
+- Updated configure-rf to force image build for all images if GH REPO set and all images are still tagged to latest in compoes.yaml.
+
+- Updated run_workflow to only pull images for individual containers instead of all containers.
+
+- Updated setup_cloudflare to auto download .env in order to populate the DOMAIN and TUNNEL_TOKEN for initial installs where configure-rf has not yet been run
+
+- Updated update_containers to pin MinIO to release RELEASE.2025-09-07T16-13-09Z as the latest release since MinIO no longer producing images:
+https://github.com/minio/minio/issues/21647#issuecomment-3418675115
+
+## 2025.10.22.1
 
 - Easier updates! When running configure-rf.sh it will display current local versions of [scripts](about/scripts.md), [files](about/files.md), and workflow versions and compare them to the latest available versions on GitHub.
 
