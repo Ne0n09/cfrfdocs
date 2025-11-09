@@ -47,9 +47,9 @@ Click the name of the script to expand the section to display details about the 
 
     ```sh title="Skip any updates and swap your viewer page with the Control Panel and disable auto validate email"
     ./configure-rf.sh -y --no-updates \
+    --set AUTO_VALIDATE_EMAIL=false \
     --set SWAP_CP=true \
-    --set VIEWER_PAGE_SUBDOMAIN=yourviewerpage \ 
-    --set AUTO_VALIDATE_EMAIL=false
+    --set VIEWER_PAGE_SUBDOMAIN=yourviewerpage
     ```
 
     ![Configure-rf demo](../images/configure-rf-clean-install.gif)

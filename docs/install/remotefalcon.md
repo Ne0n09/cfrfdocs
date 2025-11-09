@@ -66,8 +66,8 @@ chmod +x configure-rf.sh; \
 After initial setup you can re-run the configure-rf script to make additional changes.
 
 ```sh title="Swap your viewer page with the Control Panel and disable auto validate email"
-./configure-rf.sh -y \
+./configure-rf.sh -y --no-updates \
+--set AUTO_VALIDATE_EMAIL=false \
 --set SWAP_CP=true \
---set VIEWER_PAGE_SUBDOMAIN=yourviewerpage \ 
---set AUTO_VALIDATE_EMAIL=false
+--set VIEWER_PAGE_SUBDOMAIN=yourviewerpage
 ```
