@@ -1,6 +1,18 @@
 # Release Notes
 
-## 2025.11.8.2
+## 2025.11.30.1
+
+- Updated configure-rf.sh to add a warning for FPP 9 to update Apache CSP and to also link to post-install docs.
+
+- Updated post-install and updates documentation.
+
+## 2025.11.20.1
+
+- Updated run_workflow.sh and configure-rf.sh to fix images not being pulled from GHCR if rebuilding at current version.
+
+- run_workflow.sh will now just do 'sudo docker compose -f "$COMPOSE_FILE" pull' and 'sudo docker compose -f "$COMPOSE_FILE" up -d --force-recreate' to ensure any ARG changes are applied.
+
+## 2025.11.9.1
 
 - Updated configure-rf.sh to ask for Cloudflare API token for automatic Cloudflare installation
 
